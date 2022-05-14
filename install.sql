@@ -25,6 +25,7 @@ end;
 @src/main/package/etl.pks
 @src/main/package/etl.pkb
 @src/test/package/test_etl.pks
+@src/test/package/test_etl.pkb
 
 set serveroutput on size unlimited;
 exec ut.run;
