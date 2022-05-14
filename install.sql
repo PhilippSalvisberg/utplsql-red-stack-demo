@@ -24,6 +24,8 @@ end;
 @src/main/table/deptsal.sql
 @src/main/package/etl.pks
 @src/main/package/etl.pkb
+@src/main/trigger/dept_as_iud.sql
+@src/main/trigger/emp_as_iud.sql
 @src/test/package/test_etl.pks
 @src/test/package/test_etl.pkb
 

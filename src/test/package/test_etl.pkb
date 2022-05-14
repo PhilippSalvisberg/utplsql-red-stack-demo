@@ -4,8 +4,10 @@ create or replace package body test_etl is
       c_expected sys_refcursor;
    begin
       -- act
-      etl.refresh_deptsal;
-      
+      update emp
+         set sal = sal
+       where rownum = 1;
+
       -- assert;
       open c_actual for select * from deptsal;
       open c_expected for
@@ -28,7 +30,6 @@ create or replace package body test_etl is
       -- act
       insert into dept (deptno, dname, loc)
       values (-10, 'utPLSQL', 'Winterthur');
-      etl.refresh_deptsal;
       
       -- assert
       open c_actual for select * from deptsal where deptno = -10;
@@ -53,7 +54,6 @@ create or replace package body test_etl is
       values (-1, 'Jacek', 'Developer', trunc(sysdate), 4700, -10);
       insert into emp (empno, ename, job, hiredate, sal, deptno)
       values (-2, 'Sam', 'Developer', trunc(sysdate), 4300, -10);
-      etl.refresh_deptsal;
       
       -- assert
       open c_actual for select * from deptsal where deptno = -10;
@@ -78,12 +78,10 @@ create or replace package body test_etl is
       values (-1, 'Jacek', 'Developer', trunc(sysdate), 4700, -10);
       insert into emp (empno, ename, job, hiredate, sal, deptno)
       values (-2, 'Sam', 'Developer', trunc(sysdate), 4300, -10);
-      etl.refresh_deptsal;
       
       -- act
       update dept set dname = 'Testing' where deptno = -10;
       update emp set sal = 5000 where empno = -2;
-      etl.refresh_deptsal;
       
       -- assert
       open c_actual for select * from deptsal where deptno = -10;
@@ -103,11 +101,9 @@ create or replace package body test_etl is
       -- arrange
       insert into dept (deptno, dname, loc)
       values (-10, 'utPLSQL', 'Winterthur');
-      etl.refresh_deptsal;
 
       -- act
       delete from dept where deptno = -10;
-      etl.refresh_deptsal;
 
       -- assert
       open c_actual for select * from deptsal where deptno = -10;
