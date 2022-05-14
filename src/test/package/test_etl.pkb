@@ -13,7 +13,7 @@ create or replace package body test_etl is
                 d.dname,
                 nvl(sum(e.sal), 0) as sum_sal,
                 nvl(count(e.empno), 0) as num_emps,
-                nvl(trunc(avg(e.sal), 2), 0) as avg_sal
+                nvl(round(avg(e.sal), 2), 0) as avg_sal
            from dept d
            left join emp e
              on e.deptno = d.deptno
