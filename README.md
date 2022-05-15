@@ -32,7 +32,7 @@ Solution variant A and B are part of the article. Solution variant C is not cove
 
 Branch comparisons are used to visualize the changes between solution variants and steps within a solution variant.
 
-Use the script `install.sql` to install a variant as user `redstack`.
+Use the script [`install.sql`](install.sql) to install a variant as user `redstack`.
 
 ## A - DIY - 1) Test Error
 
