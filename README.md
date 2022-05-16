@@ -4,7 +4,7 @@ This repository contains the full examples used for the article named "Testen mi
 
 # User Story
 
-The article is based on the following fictitious user story based on the a schema using the famous tables [`dept`](src/main/table/dept.sql) and [`emp`](src/main/table/emp.sql):
+The article is based on the following fictitious user story based on a schema using the famous tables [`dept`](src/main/table/dept.sql) and [`emp`](src/main/table/emp.sql):
 
 > As a HR manager, I need a table with the key figures salary total, number of employees and average salary per department to assess fairness.
 
