@@ -27,8 +27,9 @@ Id | Name  | Description
 A  | DIY   | A do-it-yourself solution using a table, PL/SQL package and database triggers. It will be created step by step. Each step is represented as a branch in this repository. The tests created during the implementation of this solution can be reused for solution variant B.
 B  | View  | This solution uses a simple relational view to solve the problem. It's the simpler and better solution.
 C  | MView | This solution uses a set of materialized views and materialized view logs. It shows how to work around the limitations of materialized views which prohibit the use of the query used in solution variant B as base for the materialized view.
+D  | Mixed | This solution use one materialized view on an inner join of `dept` and `emp` (outer joining `emp` leads to an ORA-12054). The view is based on table `dept` and the materialized view. The view handles departments without employees. This solution variant is simpler and faster than the variant C.
 
-Solution variant A and B are part of the article. Solution variant C is not covered in the article. It has been crafted for completeness.
+Solution variant A and B are part of the article. Solution variant C and D are not covered in the article. They have been crafted for completeness.
 
 Branch comparisons are used to visualize the changes between solution variants and steps within a solution variant.
 
@@ -88,3 +89,11 @@ See branch [b-view-test](https://github.com/PhilippSalvisberg/utplsql-red-stack-
 See branch [c-mview-test](https://github.com/PhilippSalvisberg/utplsql-red-stack-demo/tree/c-mview-test).
 
 [Compare to previous branch](https://github.com/PhilippSalvisberg/utplsql-red-stack-demo/compare/b-view-test...c-mview-test).
+
+## D - Mixed - Test
+
+![Test runner result](images/utplsql-d-mixed-test.png)
+
+See branch [d-mixed-test](https://github.com/PhilippSalvisberg/utplsql-red-stack-demo/tree/d-mixed-test).
+
+[Compare to previous branch](https://github.com/PhilippSalvisberg/utplsql-red-stack-demo/compare/c-mview-test...d-mixed-test).
