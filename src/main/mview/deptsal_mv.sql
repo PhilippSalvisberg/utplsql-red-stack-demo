@@ -1,4 +1,4 @@
-create materialized view deptsal_emp_mv refresh fast on commit as
+create materialized view deptsal_mv refresh fast on commit as
    select d.deptno,
           d.dname,
           sum(e.sal) as sum_sal,

@@ -8,7 +8,7 @@ create or replace package test_etl is
 
    --%test(existing data)
    procedure refresh_deptsal;
-
+   
    --%endcontext
    
    --%context(modifying dept/emp)
@@ -28,19 +28,13 @@ create or replace package test_etl is
    --%test(del dept)
    --%beforetest(cleanup)
    procedure refresh_deptsal_del_dept;
-   
+
    --%endcontext
-   
+
    --%context(explain mview regarding fast refresh)
-   
-   --%test(capabilities of deptsal_emp_mv)
-   procedure capabilities_of_deptsal_emp_mv;
-   
-   --%test(capabilities of deptsal_dept_mv)
-   procedure capabilities_of_deptsal_dept_mv;
-   
-   --%test(capabilities of deptsal)
-   procedure capabilities_of_deptsal;
+
+   --%test(capabilities of deptsal_mv)
+   procedure capabilities_of_deptsal_mv;
 
    --%endcontext
 end test_etl;

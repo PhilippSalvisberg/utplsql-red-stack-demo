@@ -22,14 +22,15 @@ begin
    -- drop objects used for previous DIY solution
    exec_sql('drop package etl');
    exec_sql('drop table deptsal purge');
-   -- drop objects used for previous VIEW solution
-   exec_sql('drop view deptsal');
-   -- drop other objects
-   exec_sql('drop table emp cascade constraints purge');
-   exec_sql('drop table dept purge');
+   -- drop objects used for previous MVIEW solution
    exec_sql('drop materialized view deptsal');
    exec_sql('drop materialized view deptsal_dept_mv');
    exec_sql('drop materialized view deptsal_emp_mv');
+   -- drop other objects
+   exec_sql('drop table emp cascade constraints purge');
+   exec_sql('drop table dept purge');
+   exec_sql('drop view deptsal');
+   exec_sql('drop materialized view deptsal_mv');
    exec_sql('drop table mv_capabilities_table purge');
 end;
 /
@@ -40,11 +41,8 @@ end;
 @src/main/data/load_emp.sql
 @src/main/mviewlog/emp.sql
 @src/main/mviewlog/dept.sql
-@src/main/mview/deptsal_emp_mv.sql
-@src/main/mviewlog/deptsal_emp_mv.sql
-@src/main/mview/deptsal_dept_mv.sql
-@src/main/mviewlog/deptsal_dept_mv.sql
-@src/main/mview/deptsal.sql
+@src/main/mview/deptsal_mv.sql
+@src/main/view/deptsal.sql
 @src/test/table/utlxmv.sql
 @src/test/package/test_etl.pks
 @src/test/package/test_etl.pkb
