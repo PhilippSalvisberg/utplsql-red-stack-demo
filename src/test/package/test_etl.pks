@@ -2,8 +2,6 @@ create or replace package test_etl is
    --%suite
    --%rollback(manual)
    
-   --%beforeeach
-   --%aftereach
    procedure cleanup;
 
    --%context(refresh)
@@ -12,15 +10,19 @@ create or replace package test_etl is
    procedure refresh_deptsal;
 
    --%test(new dept without emp)
+   --%beforetest(cleanup)
    procedure refresh_deptsal_new_dept_without_emp;
 
    --%test(new dept with emp)
+   --%beforetest(cleanup)
    procedure refresh_deptsal_new_dept_with_emp;
 
    --%test(upd dept and emp)
+   --%beforetest(cleanup)
    procedure refresh_deptsal_upd_dept_and_emp;
 
    --%test(del dept)
+   --%beforetest(cleanup)
    procedure refresh_deptsal_del_dept;
    
    --%endcontext
