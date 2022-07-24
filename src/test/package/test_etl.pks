@@ -14,19 +14,19 @@ create or replace package test_etl is
    --%context(modifying dept/emp)
 
    --%test(new dept without emp)
-   --%beforetest(cleanup)
+   --%aftertest(cleanup)
    procedure refresh_deptsal_new_dept_without_emp;
 
    --%test(new dept with emp)
-   --%beforetest(cleanup)
+   --%aftertest(cleanup)
    procedure refresh_deptsal_new_dept_with_emp;
 
    --%test(upd dept and emp)
-   --%beforetest(cleanup)
+   --%aftertest(cleanup)
    procedure refresh_deptsal_upd_dept_and_emp;
 
    --%test(del dept)
-   --%beforetest(cleanup)
+   --%aftertest(cleanup)
    procedure refresh_deptsal_del_dept;
    
    --%endcontext
