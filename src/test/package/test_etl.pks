@@ -1,13 +1,17 @@
 create or replace package test_etl is
-   --%suite
+   --%suite(test_etl - deptsal)
    --%rollback(manual)
    
    procedure cleanup;
 
-   --%context(refresh)
+   --%context(keep dept/emp "as is")
 
    --%test(existing data)
    procedure refresh_deptsal;
+
+   --%endcontext
+   
+   --%context(modifying dept/emp)
 
    --%test(new dept without emp)
    --%beforetest(cleanup)
