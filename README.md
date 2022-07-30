@@ -1,6 +1,6 @@
 # utplsql-red-stack-demo
 
-This repository contains the full examples used for the article named "Testen mit utPLSQL - Leicht gemacht mit SQL Developer". The article is planned to be published in issue 4/2022 of the [Red Stack Magazin](https://www.doag.org/de/mitmachen/red-stack-business-news-archiv/).
+This repository contains the full examples used for the article [Testen mit utPLSQL - Leicht gemacht mit SQL Developer](https://backoffice.doag.org/formes/pubfiles/14512922/docs/Publikationen/Red-Stack-Magazin-inkl-Business-News/2022/04-2022/04_2022-Red_Stack_Magazin-WEB.pdf#page=32), published in issue 4/2022 of the [Red Stack Magazin](https://www.doag.org/de/mitmachen/red-stack-business-news-archiv/).
 
 # User Story
 
